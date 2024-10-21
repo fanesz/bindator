@@ -7,5 +7,5 @@ type RequiredField struct {
 
 type ValidateReturn struct {
 	Message string          `json:"message"`
-	Errors  []RequiredField `json:"errors"`
+	Errors  []RequiredField `json:"errors,omitempty"`
 }
