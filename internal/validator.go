@@ -69,7 +69,7 @@ func ValidateRequest(req *interface{}, validatorType string) (*ValidateReturn, e
 		}
 
 		errors[i] = RequiredField{
-			Field:   valError.Field(),
+			Field:   strings.ToLower(valError.Field()),
 			Message: message,
 		}
 	}
