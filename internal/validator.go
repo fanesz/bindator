@@ -46,7 +46,7 @@ func ValidateRequest(req *interface{}, validatorType string) (*ValidateReturn, e
 		return name
 	})
 
-	err := val.Struct(req)
+	err := val.Struct(*req)
 	if err == nil {
 		return nil, nil
 	}
