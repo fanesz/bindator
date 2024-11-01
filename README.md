@@ -35,8 +35,8 @@ func main() {
 	router.POST("/users", func(c *gin.Context) {
 		var user User
 
-		ok, res := bindator.BindBody(c, &user)
-		if !ok {
+		res := bindator.BindBody(c, &user)
+		if !res.Ok {
 			c.JSON(http.StatusBadRequest, res)
 			return
 		}
